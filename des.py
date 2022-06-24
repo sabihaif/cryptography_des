@@ -63,7 +63,7 @@ class DES:
         for i, block in enumerate(sub_blocks):
             block = sub_blocks[i]
             row = int(str(block[0]) + str(block[5]), 2)  # Get the row with the first and last bit
-            column = int(''.join([str(x) for x in block[1:][:-1]]), 2)  # Column is the 2,3,4,5th bits
+            column = int(''.join([str(x) for x in block[1:][:-1]]), 2)
             val = Matrices.substitution_boxes[i][row][column]  # Take the value in the SBOX appropriated for the round (i)
             bin = Helpers.bin_value(val, 4)  # Convert the value to binary
             result += [int(x) for x in bin]  # And append it to the resulting list
